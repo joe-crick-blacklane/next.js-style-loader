@@ -103,7 +103,7 @@ function applyStyles(styles) {
                 value: function _willMountOnClient() {
                     // Insert component styles using style-loader's addStyles which does the hard work for us
                     var styleLoaderStyles = styles.reduce(function (arr, style) {
-                        style._nextStyles.forEach(function (style) {
+                        style._nextStyles && style._nextStyles.forEach(function (style) {
                             return arr.push([style.id, style.content, '', style.sourceMap]);
                         });
                         return arr;
